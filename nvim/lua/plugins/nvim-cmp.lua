@@ -26,9 +26,33 @@ return {
 			mapping = cmp.mapping.preset.insert({
 				["<C-b>"] = cmp.mapping.scroll_docs(-4),
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
-				["<TAB>"] = cmp.mapping.complete(),
+				["<C-Space>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.abort(),
-				["<CR>"] = cmp.mapping.confirm({ select = true })
+
+				["<Tab>"] = cmp.mapping(function(fallback)
+					if cmp.visible() then
+						cmp.confirm({ select = true })
+					else
+						fallback()
+					end
+				end, { "i", "s" }),
+
+				["<Down>"] = cmp.mapping(function(fallback)
+					if cmp.visible() then
+						cmp.select_next_item()
+					else
+						fallback()
+					end
+				end, { "i", "s" }),
+				["<Up>"] = cmp.mapping(function(fallback)
+					if cmp.visible() then
+						cmp.select_prev_item()
+					else
+						fallback()
+					end
+				end, { "i", "s" }),
+
+				["<CR>"] = cmp.mapping.confirm({ select = false })
 			}),
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
