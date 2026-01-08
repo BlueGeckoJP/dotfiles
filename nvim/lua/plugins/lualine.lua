@@ -6,7 +6,7 @@ return {
 			options = {
 				theme = "everforest",
 				component_separators = { left = "|", right = "|" },
-				section_separators = { left = "", right = "" }
+				section_separators = { left = "", right = "" },
 			},
 			sections = {
 				lualine_a = { "mode" },
@@ -14,9 +14,8 @@ return {
 				lualine_c = { "filename" },
 				lualine_x = { "encondig", "fileformat", "filetype" },
 				lualine_y = { "progress" },
-				lualine_z = { "location" }
-			}
+				lualine_z = { "location" },
+			},
 		})
 	end,
 }
-
