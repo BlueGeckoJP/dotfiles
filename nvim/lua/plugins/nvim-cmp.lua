@@ -31,12 +31,7 @@ return {
 
 				["<Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
-						local entry = cmp.get_selected_entry()
-						if entry then
-							cmp.confirm({ select = false })
-						else
-							fallback()
-						end
+						cmp.confirm({ select = true })
 					else
 						fallback()
 					end
@@ -60,6 +55,7 @@ return {
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
+				{ name = "copilot" },
 			}, {
 				{ name = "buffer" },
 				{ name = "path" },
