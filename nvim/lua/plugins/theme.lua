@@ -1,16 +1,21 @@
 return {
-	"sainnhe/everforest",
-	lazy = false,
+	"catppuccin/nvim",
+	name = "catppuccin",
 	priority = 1000,
 	config = function()
-		vim.g.everforest_background = "medium"
-		vim.g.everforest_transparent_background = 0
-		vim.g.everforest_better_performance = 1
-		vim.g.everforest_enable_italic = 1
-		vim.g.everforest_disable_italic_comment = 0
-		vim.g.everforest_diagnostic_text_highlight = 0
-		vim.g.everforest_diagnostic_line_hightlight = 0
-		vim.g.everforest_diagnostic_virtual_text = "colored"
-		vim.cmd([[colorscheme everforest]])
+		require("catppuccin").setup({
+			flavour = "macchiato", -- latte, frappe, macchiato, mocha
+			lsp_styles = {
+				inlay_hints = {
+					background = true,
+				},
+			},
+			auto_integrations = true,
+			integrations = {
+				cmp = true,
+			},
+		})
+
+		vim.cmd([[colorscheme catppuccin]])
 	end,
 }

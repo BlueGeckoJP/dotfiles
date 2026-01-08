@@ -8,10 +8,12 @@ return {
 		"hrsh7th/cmp-cmdline",
 		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
+		"onsails/lspkind-nvim",
 	},
 	config = function()
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
+		local lspkind = require("lspkind")
 
 		cmp.setup({
 			snippet = {
@@ -60,6 +62,23 @@ return {
 				{ name = "buffer" },
 				{ name = "path" },
 			}),
+			formatting = {
+				format = lspkind.cmp_format({
+					mode = "symbol",
+					maxwidth = {
+						menu = 50,
+						abbr = 50,
+					},
+					ellipsis_char = "...",
+					show_labelDetails = true,
+					before = function(entry, vim_item)
+						return vim_item
+					end,
+					symbol_map = {
+						Copilot = "",
+					},
+				}),
+			},
 		})
 	end,
 }
