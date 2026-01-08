@@ -31,7 +31,12 @@ return {
 
 				["<Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
-						cmp.confirm({ select = true })
+						local entry = cmp.get_selected_entry()
+						if entry then
+							cmp.confirm({ select = false })
+						else
+							fallback()
+						end
 					else
 						fallback()
 					end
