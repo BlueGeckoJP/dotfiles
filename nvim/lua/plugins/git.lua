@@ -9,7 +9,7 @@ return {
 			{ "<leader>gl", "<cmd>Git pull<cr>", desc = "Git pull" },
 			{ "<leader>gb", "<cmd>Git blame<cr>", desc = "Git blame" },
 			{ "<leader>gd", "<cmd>Gdiffsplit<cr>", desc = "Git diff" },
-			{ "<leader>gg", "<cmd>Git log --graph -all --oneline --decorate<cr>", desc = "Git graph" },
+			{ "<leader>gg", "<cmd>Git log --graph --all --oneline --decorate<cr>", desc = "Git graph" },
 		},
 	},
 
