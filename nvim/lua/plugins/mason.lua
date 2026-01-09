@@ -8,6 +8,7 @@ return {
 		ensure_installed = {
 			"lua_ls",
 			"stylua",
+			"rust-analyzer",
 		},
 	},
 	config = function()
