@@ -9,8 +9,8 @@ return {
 			"lua_ls",
 			"stylua",
 			"rust-analyzer",
-			"ts_ls",
-			"denols",
+			"typescript-language-server",
+			"deno",
 		},
 	},
 	config = function()
@@ -73,5 +73,36 @@ return {
 			end,
 		})
 		vim.lsp.enable("rust-analyzer")
+
+		local function is_deno_project()
+			local root = vim.fs.root(0, { "deno.json", "deno.jsonc", "deno.lock" })
+			return root ~= nil
+		end
+
+		vim.lsp.config("ts_ls", {
+			root_markers = { "package.json", "tsconfig.json", "jsconfig.json" },
+			single_file_support = false,
+		})
+		vim.lsp.config.ts_ls.launch = function()
+			if not is_deno_project() then
+				vim.lsp.enable("ts_ls")
+			end
+		end
+
+		vim.lsp.config("denols", {
+			root_markers = { "deno.json", "deno.jsonc", "deno.lock" },
+			settings = {
+				deno = {
+					enable = true,
+					lint = true,
+					unstable = true,
+				},
+			},
+		})
+		vim.lsp.config.denols.launch = function()
+			if is_deno_project() then
+				vim.lsp.enable("denols")
+			end
+		end
 	end,
 }
