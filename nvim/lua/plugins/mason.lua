@@ -80,14 +80,16 @@ return {
 		end
 
 		vim.lsp.config("ts_ls", {
-			root_markers = { "package.json", "tsconfig.json", "jsconfig.json" },
-			single_file_support = false,
+			root_markers = { "package.json", "tsconfig.json", "jsconfig.json", ".git" },
 		})
-		vim.lsp.config.ts_ls.launch = function()
-			if not is_deno_project() then
-				vim.lsp.enable("ts_ls")
-			end
-		end
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+			callback = function()
+				if not is_deno_project() then
+					vim.lsp.enable("ts_ls")
+				end
+			end,
+		})
 
 		vim.lsp.config("denols", {
 			root_markers = { "deno.json", "deno.jsonc", "deno.lock" },
@@ -99,10 +101,13 @@ return {
 				},
 			},
 		})
-		vim.lsp.config.denols.launch = function()
-			if is_deno_project() then
-				vim.lsp.enable("denols")
-			end
-		end
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+			callback = function()
+				if is_deno_project() then
+					vim.lsp.enable("denols")
+				end
+			end,
+		})
 	end,
 }
