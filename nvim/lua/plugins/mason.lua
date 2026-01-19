@@ -9,6 +9,8 @@ return {
 			"lua_ls",
 			"stylua",
 			"rust-analyzer",
+			"ts_ls",
+			"denols",
 		},
 	},
 	config = function()
