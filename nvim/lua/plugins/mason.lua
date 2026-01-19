@@ -54,7 +54,22 @@ return {
 				},
 			},
 		})
-
 		vim.lsp.enable("lua_ls")
+
+		vim.lsp.config("rust-analyzer", {
+			settings = {
+				cargo = {
+					allFeatures = true,
+				},
+				checkOnSave = {
+					command = "clippy",
+				},
+			},
+			on_attach = function(client, bufnr)
+				client.server_capabilities.documentFormattingProvider = false
+				client.server_capabilities.documentRangeFormattingProvider = false
+			end,
+		})
+		vim.lsp.enable("rust-analyzer")
 	end,
 }
