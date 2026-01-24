@@ -17,6 +17,11 @@ return {
 				win_options = {
 					signcolumn = "yes:2",
 				},
+				lsp_file_methods = {
+					enabled = true,
+					timeout_ms = 1000,
+					autosave_changes = true,
+				},
 			})
 
 			vim.keymap.set("n", "-", "<cmd>Oil<cr>", { desc = "Open parent directory using oil.nvim" })
