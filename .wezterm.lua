@@ -7,6 +7,8 @@ config.font = wezterm.font("UDEV Gothic 35NF")
 config.default_prog = { "tmux", "new-session", "-A", "-s", "main", "zsh" }
 config.color_scheme = "Catppuccin Latte (Gogh)"
 config.enable_tab_bar = false
+config.window_background_opacity = 0.7
+config.kde_window_background_blur = true
 
 config.keys = {
 	{ key = "Enter", mods = "SHIFT", action = wezterm.action({ SendString = "\x1b\r" }) },
