@@ -273,7 +273,7 @@ load_plugins {
 //   - true (default)
 //   - false
 //
-// pane_frames true
+pane_frames false
 
 // Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
 // Options:
@@ -520,5 +520,6 @@ web_client {
 }
 
 theme "iceberg-dark"
-default_shell "/usr/bin/zsh"
-
+default_shell "/usr/bin/fish"
+layout_dir "/home/bluegecko/dotfiles"
+default_layout "zellij_layout"
