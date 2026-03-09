@@ -4,11 +4,11 @@ local config = wezterm.config_builder()
 
 config.font_size = 10
 config.font = wezterm.font("UDEV Gothic 35NF")
-config.default_prog = { "tmux", "new-session", "-A", "-s", "main", "zsh" }
-config.color_scheme = "Catppuccin Latte (Gogh)"
+config.default_prog = { "/usr/bin/zellij" }
+config.color_scheme = "Catppuccin Frappé (Gogh)"
 config.enable_tab_bar = false
-config.window_background_opacity = 0.7
-config.kde_window_background_blur = true
+--config.window_background_opacity = 0.7
+--config.kde_window_background_blur = true
 
 config.keys = {
 	{ key = "Enter", mods = "SHIFT", action = wezterm.action({ SendString = "\x1b\r" }) },
