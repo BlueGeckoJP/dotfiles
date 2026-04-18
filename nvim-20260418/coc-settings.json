@@ -1,0 +1,17 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "lua",
+    "typescript",
+    "javascript",
+    "python",
+    "rust",
+    "c",
+    "cpp"
+  ],
+  "clangd.path": "clangd",
+  "clangd.arguments": ["--background-index", "--clang-tidy", "--completion-style=detailed"],
+  "prettier.statusItemText": true,
+  "python.formatting.provider": "black",
+  "snippets.ultisnips.pythonPrompt": false,
+  "Lua.diagnostics.globals": ["vim"]
+}
