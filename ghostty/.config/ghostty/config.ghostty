@@ -1,0 +1,10 @@
+font-family = Maple Mono NF
+font-family = Rounded Mplus 1c
+
+font-size = 10
+
+command = /usr/bin/fish
+shell-integration = fish
+
+theme = Afterglow
+
