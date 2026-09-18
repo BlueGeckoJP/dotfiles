@@ -1,0 +1,43 @@
+{
+  "line_ending": "enforce_lf",
+  "format_on_save": "on",
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000,
+    },
+  },
+
+  "inlay_hints": {
+    "enabled": true,
+  },
+  "auto_signature_help": true,
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+    },
+  },
+  "minimap": {
+    "show": "always",
+  },
+
+  "ui_font_size": 16,
+  "ui_font_family": "SF Pro Display",
+  "ui_font_fallbacks": ["Rounded Mplus 1c"],
+
+  "buffer_font_size": 10,
+  "buffer_font_family": "Maple Mono NF",
+  "buffer_font_fallbacks": ["Rounded Mplus 1c"],
+
+  "terminal": {
+    "font_family": "Maple Mono NF",
+  },
+
+  "theme": {
+    "mode": "system",
+    "light": "macOS Classic Light",
+    "dark": "macOS Classic Dark",
+  },
+  "icon_theme": "Warm Charmed Icons",
+
+  "vim_mode": true,
+}
